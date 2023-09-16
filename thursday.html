@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+    <style>
+        .edit{
+            background-color:green;
+            color:white;
+            font-size:40px;
+            text-transform:uppercase;
+            padding: 2em 0; 
+
+        }
+
+        .image{
+            background-color:gree
+
+        }
+    </style>
+</head>
+<body>
+    <ul>
+        <li>
+            <input type="text" name="yourName" id="name">
+        </li>
+        <li>
+            <button>add name</button>
+        </li>
+    </ul>
+
+    <p></p>
+</body>
+
+    <script>
+const inp = document.querySelector('input')
+const para = document.querySelector('p')
+const btn = document.querySelector('button')
+
+btn.addEventListener('click', addName)
+
+function addName(){
+    let myName = inp.value
+    para.classList.add('edit')
+    para.textContent = myName
+}
+btn.setAttribute('id', 'come') 
+btn.id = ''
+    </script>
+</html>

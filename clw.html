@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>clw 1</title>
+    <style>
+        main{
+            height: 300px;
+            display: grid;
+            grid-template-columns: repeat(2,1fr);
+            gap: 25px;
+        }
+        .buttons{
+            display: grid;
+            grid-template-columns: repeat(1, 200px);
+            gap: 30px;
+        }
+        .picture{
+            background: green;
+        }
+        .img1{
+            background-size:contain;
+            background: url(https://images.unsplash.com/photo-1688765938914-640925a67a3b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60);
+        }
+        .img2{
+            background-size:contain;
+            background: url(https://images.unsplash.com/photo-1688587723313-350285e8c802?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8M3x8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60);
+        }
+        .img3{
+            background-size:contain;
+            background: url(https://images.unsplash.com/photo-1688607931885-9669e17ea963?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxleHBsb3JlLWZlZWR8NXx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60);
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <div class="picture">     
+            <h2>mountain images</h2>
+        </div>
+        <div class="buttons">
+            <button>image one</button>
+            <button>image two</button>
+            <button>image three</button>
+            <button>random color</button>
+        </div>
+    </main>
+</body>
+
+<script>
+    const pic = document.getElementsByClassName('picture')[0]
+    const btn = document.querySelectorAll('button')
+    const title = document.querySelector('h2')
+
+
+    function changeOne(){
+        pic.classList.remove('img3')
+        pic.classList.remove('img2')
+        pic.classList.remove('picture')
+        pic.classList.add('img1')
+        title.textContent = '-sky'
+        title.style.display = 'block'
+
+    }
+    function changeTwo(){
+        pic.classList.remove('img1')
+        pic.classList.remove('img3')
+        pic.classList.remove('picture')
+        pic.classList.add('img2')
+        title.textContent = '-Mountain'
+        title.style.textAlign = 'center'
+    }
+    function changeThree(){
+        pic.classList.remove('img1')
+        pic.classList.remove('img2')
+        pic.classList.remove('picture')
+        pic.classList.add('img3')
+        title.style.fontsize = '3rem'
+        title.textContent.fontsize =' cloud'
+        title.style.textTransform = 'upperCase'
+    }
+    
+    function randomColor(){
+        pic.style.background = `rgb(${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)},${Math.floor(Math.random()*255)})`
+    }
+
+    btn[0].addEventListener('click',changeOne)
+    btn[1].addEventListener('click',changeTwo)
+    btn[2].addEventListener('click',changeThree)
+
+</script>
+</html>
